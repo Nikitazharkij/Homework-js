@@ -1,4 +1,4 @@
-xdescribe('apples.js -> getNumWord -> test for choosing a right form of word', function() {
+describe('apples.js -> getNumWord -> test for choosing a right form of word', function() {
   var result;
   var a = ['яблоко', 'яблока', 'яблок'];
 
@@ -13,7 +13,7 @@ xdescribe('apples.js -> getNumWord -> test for choosing a right form of word', f
   });
 });
 
-xdescribe('debug.js -> test -> tests for output', function() {
+describe('debug.js -> test -> tests for output', function() {
     var apples;
 
     beforeEach(function() {
