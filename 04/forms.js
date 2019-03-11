@@ -6,7 +6,6 @@ function createForm() {
   let body = document.querySelector('body');
   let div = document.createElement('div');
   let button = document.createElement('button');
-  let formIsRight = true;
 
   const str = [
     'Введите Ваше имя: ',
@@ -80,9 +79,9 @@ function createForm() {
 
     if (password.value.length > 4) {
       return true;
-    } else {
-      return false;
     }
+
+      return false;
 
   };
 
@@ -107,22 +106,23 @@ function createForm() {
 
     if (countSign === 1 && countSpace === 0) {
       return true;
-    } else {
-      return false;
     }
+
+      return false;
 
   };
 
 // проверка правильности заполнения пароля и email
   function checkForm() {
 
-    if ((!checkPassword()) || (!checkEmail())) {
-      formIsRight = false;
-    } else {
-      formIsRight = true;
+    if (checkPassword() && checkEmail()) {
+      console.log('true');
+      return true;
     }
 
-    console.log(formIsRight);
+    console.log('false');
+    return false;
+
   };
 
 };
