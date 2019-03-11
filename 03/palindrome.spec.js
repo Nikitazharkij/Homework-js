@@ -1,8 +1,14 @@
-describe('palindrome.js -> palindrome -> test for comparing gainst `null`', function() {
-  it('shouldnt return null', function() {
-    var text = 'some text';
+describe('palindrome.js -> palindrome -> test for comparing gainst true', function() {
+  var text;
+  var result;
+
+  beforeEach(function() {
+    text = 'ded';
+    result = palindrome();
+  });
+
+  it('should return true', function() {
     spyOn(window, 'prompt').and.returnValue(text);
-    var result = palindrome();
-    expect(result).not.toBe(null);
+    expect(result).toBe(true);
   });
 });

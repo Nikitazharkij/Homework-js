@@ -8,7 +8,7 @@ function positiveSum(array) {
 
   if (array === 'undefined') {
     return sum = 0;
-  } else {
+  }
 
     for (var i = 0; i < array.length; i++) {
       if (array[i] > 0) {
@@ -16,7 +16,6 @@ function positiveSum(array) {
       }
     }
     return sum;
-  }
 
 };
 
@@ -24,23 +23,18 @@ function positiveSum(array) {
 
 function evenOrOdd(num) {
 
-  if (num % 2 === 0) {
-    return 'Even';
-  } else {
-    return 'Odd';
-    }
+  return num % 2 === 0 ? 'Even' : 'Odd';
 
-  };
+
+};
 
 // какой век
 
 function centuryFromYear(year) {
 
-  var century = Math.ceil(year / 100);
+  return Math.ceil(year / 100);
 
-  return century;
-
-  };
+};
 
 // удаление элементов, встречающиеся во втором массиве
 

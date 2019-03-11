@@ -1,15 +1,16 @@
 describe('apples.js -> getNumWord -> test for choosing a right form of word', function() {
   var result;
-  var a = ['яблоко', 'яблока', 'яблок'];
 
   beforeEach(function() {
     result = getNumWord();
   });
 
-  it('shouldnt return undefined', function() {
-    for (var i = 0; i < 100; i++) {
-      expect(a).not.toBeUndefined();
-    }
+  it('Should be right form', function(){
+    spyOn(window, 'prompt').and.callFake(function() {
+      return 1;
+    });
+    test();
+    expect(result).toBe('яблоко');
   });
 });
 
@@ -17,12 +18,12 @@ describe('debug.js -> test -> tests for output', function() {
     var apples;
 
     beforeEach(function() {
-       apples = ['Сколько у вас яблок?'];
+      apples = ['Сколько у вас яблок?'];
     });
 
     it('Should call getNumWord', function(){
-       spyOn(window, 'getNumWord').and.returnValue(apples);
-       test();
-       expect(window.getNumWord).toHaveBeenCalled();
-    });
+      spyOn(window, 'getNumWord').and.returnValue(apples);
+      test();
+      expect(window.getNumWord).toHaveBeenCalled();
+  });
 });
