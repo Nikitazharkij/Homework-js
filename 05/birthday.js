@@ -1,13 +1,17 @@
 'use strict';
 
 function getDaysToBirthday() {
-  const msecInDay = 24 * 60 * 60 * 1000;
 
+  let yearNow;
   let input = document.getElementById('input1');
   let button = document.getElementById('button1');
   let dateNow = new Date();
+
+  const msecInDay = 24 * 60 * 60 * 1000;
+
+
   dateNow.setHours(0,0,0,0);
-  let yearNow = dateNow.getFullYear();
+  yearNow = dateNow.getFullYear();
 
   button.onclick = function () {
     let result;
@@ -29,7 +33,7 @@ function getDaysToBirthday() {
 
     return result;
 
-  }
+    }
 
 }
 
