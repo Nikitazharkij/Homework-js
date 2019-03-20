@@ -1,0 +1,27 @@
+Можно заменить на тернарник:
+// if (a % b === 0) {
+  //   alert('Делится!');
+  // } else {
+  //   alert('Делится с остатком ' + (a % b));
+  // }
+
+   a % b === 0 ? alert('Делится!') : alert('Делится с остатком ' + (a % b));
+
+Кол-во гласных
+Можно было юзать только нижний регистр и сделать str = str.toLowerCase()
+
+внутри чистой функции не должно быть consol.log(), вывести в консоль надо было отдельно: console.log(func()); а в функции добавить reurn result, 
+
+По форме посмотри эти линки. и перед выполнением всегда залазь на mdn и смотри доступные методы. В целом то что сам реализовал молодец.
+
+https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+
+https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf
+
+
+if (countSign === 1 && countSpace === 0) {
+      return true;
+ }
+      return false;
+можно так 
+return countSign === 1 && countSpace === 0

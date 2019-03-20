@@ -1,0 +1,62 @@
+Привет, по второму дз
+вот пример как можно было оттестить
+describe('anketa.js -> anketa -> check for retirement age', function(){
+  it('shouldnt be null', function(){
+    var text = 'some text';
+    let promptVar = 0;
+    spyOn(window, 'prompt').and.callFake(function() {
+      switch(promptVar) {
+        case 0:
+        case 1:
+        case 2:
+          promptVar++;
+          return text;
+        case 3:
+          promptVar++;
+          return 60
+        case 4:
+          promptVar++;
+          return text;
+      }
+    });
+    spyOn(window, 'confirm').and.returnValue(true);
+    spyOn(window, 'alert').and.returnValue(true);
+    var result = anketa();
+    expect(result).not.toBe(null);
+   });
+});
+Мажорное замечание:
+'apples.js -> getNumWord -> test for choosing a right form of word'
+
+В тесте про яблоки ты проверяешь сто раз что массив 'а' определен он никогда не свалиться, саму функцию ты посути не тестируешь я закоментил beforeEach и тест отработал, тут тебе надо в тесте запустить функцию с разными параметрами и ожидать конкретный ответ: яблок, яблока, яблоко.
+
+То же самое в палиндроме надо проверить как работает функция т.е. должно быть что то вроде 
+res = palindrom('adda');
+expect(res).toBe(true)
+
+Дальше минорные замечания:
+если у тебя в if есть return то else лучше не писать это уменьшит вложеность кода и улучшит читаемость
+
+if (array === 'undefined') {
+    return sum = 0;
+  } else { ... } - esle не нужен можно просто писать код дальше
+---------------------
+ if (num % 2 === 0) {
+    return 'Even';
+  } else {
+    return 'Odd';
+    }
+тут можно применить тернарный оператор
+
+return num % 2 === 0 ? 'Even' : 'Odd';
+
+--------------------------------
+function centuryFromYear(year) {
+
+  var century = Math.ceil(year / 100);
+
+  return century;
+
+  }; тут тоже можно упростить и не создавать переменную а сразу вернуть результат
+
+return Math.ceil(year / 100);
