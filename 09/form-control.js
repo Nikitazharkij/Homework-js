@@ -9,9 +9,9 @@ function FormControl(type, id, validators) {
         console.log(this.isValid);
 
         if (!this.isValid) {
-            addClass(['error']);
+            this.addClass(['error'], control).bind(this);
         } else {
-            removeClass(['error']);
+            this.removeClass(['error'], control).bind(this);
         }
 
         const errorContainer = this.control.parentNode.querySelector('.error-list');
@@ -22,13 +22,6 @@ function FormControl(type, id, validators) {
         });
 
         errorContainer.innerHTML = text;
-    };
-
-    this.pushItems = function(item) {
-        const self = this;
-        if (self.validationErrors.indexOf(item.toString()) === -1) {
-            self.validationErrors.push(item.toString());
-        }
     };
 
     function getValidation() {
