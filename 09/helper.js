@@ -1,10 +1,10 @@
-    function addClass(classes) {
+    function addClass(classes, param) {
         try {
             if (!Array.isArray(classes)) {
                 throw new Error('Param should be an array of strings');
             }
 
-            let classList = this.control.classList;
+            let classList = this.param.classList;
             classes.forEach(function(item){
                 if (classList.contains(String(item))) {
                     return false;
@@ -19,13 +19,13 @@
 
     };
 
-    function removeClass(classes) {
+    function removeClass(classes, param) {
         try {
             if (!Array.isArray(classes)) {
                 throw new Error('Param should be an array of strings');
             }
 
-            let classList = this.control.classList;
+            let classList = this.param.classList;
             console.log(classList);
             classes.forEach(function(item){
                 if (classList.contains(String(item))) {
