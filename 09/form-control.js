@@ -24,6 +24,13 @@ function FormControl(type, id, validators) {
         errorContainer.innerHTML = text;
     };
 
+    this.pushItems = function(item) {
+        const self = this;
+        if (self.validationErrors.indexOf(item.toString()) === -1) {
+            self.validationErrors.push(item.toString());
+        }
+    };
+
     function getValidation() {
         let isValid = true;
         const self = this;
