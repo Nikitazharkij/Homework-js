@@ -1,51 +1,12 @@
-function FormControl(type, id, validators) {
+function FormControl(type, id, validators, helper) {
     this.control = getControl();
     this.validationErrors = [];
 
     this.isValid = getValidation.bind(this)();
 
-    this.addClass = function(classes) {
-        try {
-            if (!Array.isArray(classes)) {
-                throw new Error('Param should be an array of strings');
-            }
+    helper.addClass();
 
-            let classList = this.control.classList;
-            classes.forEach(function(item){
-                if (classList.contains(String(item))) {
-                    return false;
-                }
-
-                classList.add(String(item));
-            });
-        } catch (e) {
-            console.log(e.message);
-            return false;
-        }
-
-    };
-
-    this.removeClass = function(classes) {
-        try {
-            if (!Array.isArray(classes)) {
-                throw new Error('Param should be an array of strings');
-            }
-
-            let classList = this.control.classList;
-            console.log(classList);
-            classes.forEach(function(item){
-                if (classList.contains(String(item))) {
-                    classList.remove(String(item));
-                }
-                return true;
-
-            });
-        } catch (e) {
-            console.log(e.message);
-            return false;
-        }
-
-    };
+    helper.removeClass();
 
     this.startCheck = function() {
         this.isValid = getValidation.bind(this)();
