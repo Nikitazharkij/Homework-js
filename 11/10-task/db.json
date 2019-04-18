@@ -1,0 +1,21 @@
+{
+  "posts": [
+    {
+      "title": "Some text 3",
+      "author": "Authi 3",
+      "text": "Some text 3",
+      "id": 3
+    },
+    {
+      "title": "Some Text 1",
+      "author": "Authi 1",
+      "text": "Some text 1",
+      "id": 4
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  },
+  "users": []
+}
