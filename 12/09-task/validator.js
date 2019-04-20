@@ -18,3 +18,10 @@ function MinLength(value) {
         return value.length >= 7;
     }
 }
+
+function ContainSing(value) {
+    CommonValidator.call(this, 'Should be contained sing @');
+    this.test = function(value) {
+        return value.indexOf('@') !== -1;
+    }
+}
