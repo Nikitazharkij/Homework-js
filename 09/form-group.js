@@ -2,9 +2,9 @@ function FormGroup(id, helper) {
     const form = getForm();
     this.formControls = [];
 
-    helper.addClass();
-
-    helper.removeClass();
+    // helper.addClass();
+    //
+    // helper.removeClass();
 
     this.isValid = getStatus.bind(this)();
 
@@ -18,13 +18,13 @@ function FormGroup(id, helper) {
 
             self.isValid = getStatus.bind(self)();
             if (self.isValid) {
-                self.removeClass(['error']);
+                helper.removeClass(form, ['error']);
                 console.log('Data was sent');
                 return true;
             }
 
             console.log('Form is not valid');
-            self.addClass(['error']);
+            helper.addClass(form, ['error']);
             self.formControls.forEach(function(control){
                control.startCheck();
             });

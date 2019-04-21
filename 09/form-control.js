@@ -4,18 +4,18 @@ function FormControl(type, id, validators, helper) {
 
     this.isValid = getValidation.bind(this)();
 
-    helper.addClass();
-
-    helper.removeClass();
+    // helper.addClass();
+    //
+    // helper.removeClass();
 
     this.startCheck = function() {
         this.isValid = getValidation.bind(this)();
         console.log(this.isValid);
 
         if (!this.isValid) {
-            this.addClass(['error']);
+            helper.addClass(this.control, ['error']);
         } else {
-            this.removeClass(['error']);
+            helper.removeClass(this.control, ['error']);
         }
 
         const errorContainer = this.control.parentNode.querySelector('.error-list');

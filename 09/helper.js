@@ -1,12 +1,12 @@
 function Helper() {
 
-      this.addClass = function(classes) {
+      this.addClass = function(el, classes) {
         try {
             if (!Array.isArray(classes)) {
                 throw new Error('Param should be an array of strings');
             }
 
-            let classList = this.form.classList;
+            let classList = el.classList;
             classes.forEach(function(item){
                 if (classList.contains(String(item))) {
                     return false;
@@ -21,13 +21,13 @@ function Helper() {
 
     };
 
-    this.removeClass = function(classes) {
+    this.removeClass = function(el, classes) {
         try {
             if (!Array.isArray(classes)) {
                 throw new Error('Param should be an array of strings');
             }
 
-            let classList = this.form.classList;
+            let classList = el.classList;
             classes.forEach(function(item){
                 if (classList.contains(String(item))) {
                     classList.remove(String(item));
