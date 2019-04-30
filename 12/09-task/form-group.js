@@ -1,54 +1,57 @@
-function FormGroup(id) {
-    const form = getForm();
-    this.formControls = [];
-    this.addClass = classes => {
-        try {
-            if (!Array.isArray(classes)) {
-                throw new Error('Param should be an array of strings');
-            }
+class FormGroup {
 
-            let classList = form.classList;
-            classes.forEach(item => {
-                if (classList.contains(String(item))) {
-                    return false;
+    constructor(id) {
+        const form = getForm();
+        this.formControls = [];
+        this.addClass = classes => {
+            try {
+                if (!Array.isArray(classes)) {
+                    throw new Error('Param should be an array of strings');
                 }
 
-                classList.add(String(item));
-            });
-        } catch (e) {
-            console.log(e.message);
-            return false;
-        }
+                let classList = form.classList;
+                classes.forEach(item => {
+                    if (classList.contains(String(item))) {
+                        return false;
+                    }
 
-    };
-
-    this.removeClass = classes => {
-        try {
-            if (!Array.isArray(classes)) {
-                throw new Error('Param should be an array of strings');
+                    classList.add(String(item));
+                });
+            } catch (e) {
+                console.log(e.message);
+                return false;
             }
 
-            let classList = form.classList;
-            classes.forEach(item => {
-                if (classList.contains(String(item))) {
-                    classList.remove(String(item));
+        };
+
+        this.removeClass = classes => {
+            try {
+                if (!Array.isArray(classes)) {
+                    throw new Error('Param should be an array of strings');
                 }
 
-                return true;
+                let classList = form.classList;
+                classes.forEach(item => {
+                    if (classList.contains(String(item))) {
+                        classList.remove(String(item));
+                    }
 
-            });
-        } catch (e) {
-            console.log(e.message);
-            return false;
-        }
+                    return true;
 
-    };
+                });
+            } catch (e) {
+                console.log(e.message);
+                return false;
+            }
+
+        };
+    }
 
     this.isValid = getStatus.bind(this)();
 
     _init.bind(this)();
 
-    function _init() {
+    _init() {
         const self = this;
 
         form.addEventListener('submit', event => {
@@ -71,7 +74,7 @@ function FormGroup(id) {
         });
     }
 
-    function getForm() {
+    getForm() {
         let forms = document.getElementsByTagName('form');
         forms = [].slice.call(forms, 0);
 
@@ -85,7 +88,7 @@ function FormGroup(id) {
       this.isValid = getStatus.bind(this)();
     };
 
-    function getStatus() {
+    getStatus() {
         try {
             if(this.formControls.length === 0) {
                 throw new Error('No detected form control elements');

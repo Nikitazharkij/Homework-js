@@ -1,73 +1,77 @@
-function FormControl(type, id, validators) {
-    this.control = getControl();
-    this.validationErrors = [];
+class FormControl {
 
-    this.isValid = getValidation.bind(this)();
+    constructor(type, id, validators) {
+        this.control = getControl();
+        this.validationErrors = [];
 
-    this.addClass = classes => {
-        try {
-            if (!Array.isArray(classes)) {
-                throw new Error('Param should be an array of strings');
-            }
-
-            let classList = this.control.classList;
-            classes.forEach(item => {
-                if (classList.contains(String(item))) {
-                    return false;
-                }
-
-                classList.add(String(item));
-            });
-        } catch (e) {
-            console.log(e.message);
-            return false;
-        }
-
-    };
-
-    this.removeClass = classes => {
-        try {
-            if (!Array.isArray(classes)) {
-                throw new Error('Param should be an array of strings');
-            }
-
-            let classList = this.control.classList;
-            console.log(classList);
-            classes.forEach(item => {
-                if (classList.contains(String(item))) {
-                    classList.remove(String(item));
-                }
-                return true;
-
-            });
-        } catch (e) {
-            console.log(e.message);
-            return false;
-        }
-
-    };
-
-    this.startCheck = () => {
         this.isValid = getValidation.bind(this)();
-        console.log(this.isValid);
 
-        if (!this.isValid) {
-            this.addClass(['error']);
-        } else {
-            this.removeClass(['error']);
-        }
+        this.addClass = classes => {
+            try {
+                if (!Array.isArray(classes)) {
+                    throw new Error('Param should be an array of strings');
+                }
 
-        const errorContainer = this.control.parentNode.querySelector('.error-list');
-        let text = '';
-        console.log(this.validationErrors);
-        this.validationErrors.forEach(error => {
-            text += `<span>${error}</span><br />`;
-        });
+                let classList = this.control.classList;
+                classes.forEach(item => {
+                    if (classList.contains(String(item))) {
+                        return false;
+                    }
 
-        errorContainer.innerHTML = text;
-    };
+                    classList.add(String(item));
+                });
+            } catch (e) {
+                console.log(e.message);
+                return false;
+            }
 
-    function getValidation() {
+        };
+
+        this.removeClass = classes => {
+            try {
+                if (!Array.isArray(classes)) {
+                    throw new Error('Param should be an array of strings');
+                }
+
+                let classList = this.control.classList;
+                console.log(classList);
+                classes.forEach(item => {
+                    if (classList.contains(String(item))) {
+                        classList.remove(String(item));
+                    }
+                    return true;
+
+                });
+            } catch (e) {
+                console.log(e.message);
+                return false;
+            }
+
+        };
+
+        this.startCheck = () => {
+            this.isValid = getValidation.bind(this)();
+            console.log(this.isValid);
+
+            if (!this.isValid) {
+                this.addClass(['error']);
+            } else {
+                this.removeClass(['error']);
+            }
+
+            const errorContainer = this.control.parentNode.querySelector('.error-list');
+            let text = '';
+            console.log(this.validationErrors);
+            this.validationErrors.forEach(error => {
+                text += `<span>${error}</span><br />`;
+            });
+
+            errorContainer.innerHTML = text;
+        };
+
+    }
+
+    getValidation() {
         let isValid = true;
         const self = this;
 
@@ -92,12 +96,12 @@ function FormControl(type, id, validators) {
 
     _init.bind(this)();
 
-    function _init() {
+    _init() {
         const self = this;
         this.control.addEventListener('input', this.startCheck.bind(self));
     }
 
-    function getControl() {
+    getControl() {
         let controls = document.getElementsByTagName(type);
 
         controls = [].slice.call(controls, 0);
