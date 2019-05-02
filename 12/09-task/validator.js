@@ -10,7 +10,7 @@ class CommonValidator {
     }
 }
 
-class Required extends CommonValidator{
+export class Required extends CommonValidator {
     constructor() {
         super('This field is required.');
         this.test = value => {
@@ -19,7 +19,7 @@ class Required extends CommonValidator{
     }
 }
 
-class MinLength extends CommonValidator {
+export class MinLength extends CommonValidator {
     constructor(value) {
         super('Min length should be 7');
         this.test = value => {
@@ -28,7 +28,7 @@ class MinLength extends CommonValidator {
     }
 }
 
-class ContainSing extends CommonValidator {
+export class ContainSing extends CommonValidator {
     constructor(value) {
         super('Should be contained sing @');
         this.test = value => {

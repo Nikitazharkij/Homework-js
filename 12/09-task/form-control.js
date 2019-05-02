@@ -1,62 +1,21 @@
-class FormControl {
+'use strict';
 
-    constructor(type, id, validators) {
+export class FormControl {
+
+    constructor(type, id, validators, helper) {
         this.control = getControl();
         this.validationErrors = [];
 
         this.isValid = getValidation.bind(this)();
-
-        this.addClass = classes => {
-            try {
-                if (!Array.isArray(classes)) {
-                    throw new Error('Param should be an array of strings');
-                }
-
-                let classList = this.control.classList;
-                classes.forEach(item => {
-                    if (classList.contains(String(item))) {
-                        return false;
-                    }
-
-                    classList.add(String(item));
-                });
-            } catch (e) {
-                console.log(e.message);
-                return false;
-            }
-
-        };
-
-        this.removeClass = classes => {
-            try {
-                if (!Array.isArray(classes)) {
-                    throw new Error('Param should be an array of strings');
-                }
-
-                let classList = this.control.classList;
-                console.log(classList);
-                classes.forEach(item => {
-                    if (classList.contains(String(item))) {
-                        classList.remove(String(item));
-                    }
-                    return true;
-
-                });
-            } catch (e) {
-                console.log(e.message);
-                return false;
-            }
-
-        };
 
         this.startCheck = () => {
             this.isValid = getValidation.bind(this)();
             console.log(this.isValid);
 
             if (!this.isValid) {
-                this.addClass(['error']);
+                helper.addClass(this.control, ['error']);
             } else {
-                this.removeClass(['error']);
+                helper.removeClass(this.control, ['error']);
             }
 
             const errorContainer = this.control.parentNode.querySelector('.error-list');
@@ -110,4 +69,4 @@ class FormControl {
            return control.id === id;
         })[0];
     }
-}
+};

@@ -1,50 +1,10 @@
-class FormGroup {
+'use strict';
 
-    constructor(id) {
+export class FormGroup {
+
+    constructor(id, helper) {
         const form = getForm();
         this.formControls = [];
-        this.addClass = classes => {
-            try {
-                if (!Array.isArray(classes)) {
-                    throw new Error('Param should be an array of strings');
-                }
-
-                let classList = form.classList;
-                classes.forEach(item => {
-                    if (classList.contains(String(item))) {
-                        return false;
-                    }
-
-                    classList.add(String(item));
-                });
-            } catch (e) {
-                console.log(e.message);
-                return false;
-            }
-
-        };
-
-        this.removeClass = classes => {
-            try {
-                if (!Array.isArray(classes)) {
-                    throw new Error('Param should be an array of strings');
-                }
-
-                let classList = form.classList;
-                classes.forEach(item => {
-                    if (classList.contains(String(item))) {
-                        classList.remove(String(item));
-                    }
-
-                    return true;
-
-                });
-            } catch (e) {
-                console.log(e.message);
-                return false;
-            }
-
-        };
     }
 
     this.isValid = getStatus.bind(this)();
@@ -59,13 +19,13 @@ class FormGroup {
 
             self.isValid = getStatus.bind(self)();
             if (self.isValid) {
-                self.removeClass(['error']);
+                helper.removeClass(form, ['error']);
                 console.log('Data was sent');
                 return true;
             }
 
             console.log('Form is not valid');
-            self.addClass(['error']);
+            helper.addClass(form, ['error']);
             self.formControls.forEach(control => {
                control.startCheck();
             });
@@ -110,4 +70,4 @@ class FormGroup {
             return true;
         }
     }
-}
+};
