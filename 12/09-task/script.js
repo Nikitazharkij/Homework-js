@@ -1,11 +1,11 @@
 'use strict';
 
-import { Required as CommonValidator } from './validator.js';
-import { MinLength as CommonValidator } from './validator.js';
-import { ContainSing as CommonValidator } from './validator.js';
-import { FormGroup } from './form-group.js';
-import { FormControl } from './form-control.js';
-import { Helper } from './helper.js';
+import { Required as CommonValidator } from './validator';
+import { MinLength as CommonValidator } from './validator';
+import { ContainSing as CommonValidator } from './validator';
+import { FormGroup } from './form-group';
+import { FormControl } from './form-control';
+import { Helper } from './helper';
 
 const helper = new Helper();
 const itemForm = new FormGroup('registration', helper);

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+
+	<title>Single Page App Without A Framework</title>
+
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet">
+	<link href="assets/css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+	<div class="main-content">
+
+		<div class="all-products page">
+
+			<div class="filters">
+				<form>
+						<input id="input_for_search" class="place_for_search" type="text" value="" placeholder="Search" autofocus>
+						<input class="button_for_search" type="button" value="Find" title="Начать поиск">
+
+					<div class="filter-criteria">
+						<span>Topic</span>
+						<label><input type="checkbox" name="topic" value="policy">Policy</label>
+						<label><input type="checkbox" name="topic" value="sport">Sport</label>
+						<label><input type="checkbox" name="topic" value="accident">Accident</label>
+						<label><input type="checkbox" name="topic" value="stories">Stories</label>
+						<label><input type="checkbox" name="topic" value="tech">Tech</label>
+						<label><input type="checkbox" name="topic" value="science">Science</label>
+					</div>
+
+					<div class="filter-criteria">
+						<span>Continent</span>
+						<label><input type="checkbox" value="africa" name="continent">Africa</label>
+						<label><input type="checkbox" value="america" name="continent">America</label>
+						<label><input type="checkbox" value="asia" name="continent">Asia</label>
+						<label><input type="checkbox" value="australia" name="continent">Australia</label>
+						<label><input type="checkbox" value="europe" name="continent">Europe</label>
+					</div>
+
+					<div class="filter-criteria">
+						<span>Date</span>
+						<label><input type="checkbox" value="today" name="date">Today</label>
+						<label><input type="checkbox" value="yesterday" name="date">Yesterday</label>
+						<label><input type="checkbox" value="lastweek" name="date">Last week</label>
+					</div>
+
+					<button>Clear filters</button>
+
+				</form>
+
+				<div class="about">
+				<a href="./about.html">About</a>
+				</div>
+
+
+			</div>
+
+			<ul class="products-list">
+				<script id="products-template" type="x-handlebars-template">​
+					{{#each this}}
+						<li data-index="{{id}}">
+							<a href="#" class="product-photo"><img src="{{image.small}}" height="130" alt="{{name}}"/></a>
+							<h2><a href="#"> {{name}} </a></h2>
+							<ul class="product-description">
+								<li><span>Topic: </span>{{specs.topic}}</li>
+								<li><span>Continent: </span>{{specs.continent}}</li>
+								<li><span>Date: </span>{{specs.date}}</li>
+							</ul>
+							<button>More</button>
+							<div class="highlight"></div>
+						</li>
+					{{/each}}
+				</script> 
+			</ul>
+
+		</div>
+
+
+		<div class="single-product page">
+
+			<div class="overlay"></div>
+
+			<div class="preview-large">
+				<h3>Single product view</h3>
+				<img src=""/>
+				<p></p>
+
+				<span class="close">×</span>
+			</div>
+
+		</div>
+
+		<div class="error page">
+			<h3>Sorry, something went wrong :(</h3>
+		</div>
+
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+	<script src="dist/bundle.js"></script>
+</body>
+</html>

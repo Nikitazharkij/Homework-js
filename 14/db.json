@@ -1,0 +1,94 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Uber aims for $90bn stock market debut",
+      "specs": {
+        "topic": "Policy",
+        "continent": "Africa",
+        "date": "Today"
+      },
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique ipsum in efficitur pharetra. Maecenas luctus ante in neque maximus, sed viverra sem posuere. Vestibulum lectus nisi, laoreet vel suscipit nec, feugiat at odio. Etiam eget tellus arcu.",
+      "rating": 4,
+      "image": {
+        "small": "assets/images/uber.jpg",
+        "large": "assets/images/uber.jpg"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Getafe frustrate neighbours Real Madrid",
+      "specs": {
+        "topic": "Sport",
+        "continent": "America",
+        "date": "Yesterday"
+      },
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique ipsum in efficitur pharetra. Maecenas luctus ante in neque maximus, sed viverra sem posuere. Vestibulum lectus nisi, laoreet vel suscipit nec, feugiat at odio. Etiam eget tellus arcu.",
+      "rating": 4,
+      "image": {
+        "small": "assets/images/football.jpg",
+        "large": "assets/images/football.jpg"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Sri Lanka ringleader 'died in attacks'",
+      "specs": {
+        "topic": "Accident",
+        "continent": "Asia",
+        "date": "Lastweek"
+      },
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique ipsum in efficitur pharetra. Maecenas luctus ante in neque maximus, sed viverra sem posuere. Vestibulum lectus nisi, laoreet vel suscipit nec, feugiat at odio. Etiam eget tellus arcu.",
+      "rating": 4,
+      "image": {
+        "small": "assets/images/accident.jpg",
+        "large": "assets/images/accident.jpg"
+      }
+    },
+    {
+      "id": 4,
+      "name": "I helped test a wonder drug - then I was denied it",
+      "specs": {
+        "topic": "Stories",
+        "continent": "Australia",
+        "date": "Lastweek"
+      },
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique ipsum in efficitur pharetra. Maecenas luctus ante in neque maximus, sed viverra sem posuere. Vestibulum lectus nisi, laoreet vel suscipit nec, feugiat at odio. Etiam eget tellus arcu.",
+      "rating": 4,
+      "image": {
+        "small": "assets/images/story.jpg",
+        "large": "assets/images/story.jpg"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Tracking the toxic air that's killing millions",
+      "specs": {
+        "topic": "Tech",
+        "continent": "Europe",
+        "date": "Yesterday"
+      },
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique ipsum in efficitur pharetra. Maecenas luctus ante in neque maximus, sed viverra sem posuere. Vestibulum lectus nisi, laoreet vel suscipit nec, feugiat at odio. Etiam eget tellus arcu.",
+      "rating": 4,
+      "image": {
+        "small": "assets/images/tech.jpg",
+        "large": "assets/images/tech.jpg"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Make EU trade with Brazil sustainable",
+      "specs": {
+        "topic": "Science",
+        "continent": "America",
+        "date": "Today"
+      },
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tristique ipsum in efficitur pharetra. Maecenas luctus ante in neque maximus, sed viverra sem posuere. Vestibulum lectus nisi, laoreet vel suscipit nec, feugiat at odio. Etiam eget tellus arcu.",
+      "rating": 4,
+      "image": {
+        "small": "assets/images/science.jpg",
+        "large": "assets/images/science.jpg"
+      }
+    }
+  ]
+}
